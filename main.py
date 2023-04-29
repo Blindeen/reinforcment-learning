@@ -1,11 +1,13 @@
 from classes.agent import Agent
 from classes.square_environment import SquareEnvironment
+from enums.constants import Constans
 
 # Square reinforcment learning
-finish_coordinates = (3, 3)
 qtable = {}
-agent = Agent(0.1, 0.9, qtable)
+episodes_number = 100000
+finish_coordinates = (3, 3)
+agent = Agent(Constans.ALFA.value, Constans.GAMMA.value, qtable)
 environment = SquareEnvironment(finish_coordinates)
 
-agent.learn(100000, environment)
+agent.learn(episodes_number, environment)
 agent.display_qtable()
