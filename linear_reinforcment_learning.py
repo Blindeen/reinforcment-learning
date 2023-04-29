@@ -4,11 +4,11 @@ from classes.linear_environment import LineEnvironment
 import numpy as np
 
 # Linear reinforcment learning
-track = np.array(['S', ' ', ' ', ' ', ' ', 'G'])
 qtable = {}
+episodes_number = 100000
+finish = 5
 agent = Agent(0.1, 0.9, qtable)
-environment = LineEnvironment(track)
+environment = LineEnvironment(finish)
 
-agent.learn(100000, environment)
-
+agent.learn(episodes_number, environment)
 agent.display_qtable()

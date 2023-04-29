@@ -2,19 +2,19 @@ from classes.environment import Environment
 
 
 class LineEnvironment(Environment):
-    def __init__(self, track):
+    def __init__(self, finish):
         self.track_index = 0
-        self.track = track
+        self.finish = finish
 
     def step(self, action):
         if action == 0:
             if self.track_index != 0:
                 self.track_index -= 1
         if action == 1:
-            if self.track_index != len(self.track) - 1:
+            if self.track_index != self.finish:
                 self.track_index += 1
 
-        if self.track[self.track_index] == 'G':
+        if self.track_index == self.finish:
             reward = 1
             done = True
         else:
