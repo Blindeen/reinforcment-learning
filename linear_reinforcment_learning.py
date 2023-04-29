@@ -1,13 +1,12 @@
 from classes.agent import Agent
 from classes.linear_environment import LineEnvironment
-
-import numpy as np
+from enums.constants import Constants
 
 # Linear reinforcment learning
 qtable = {}
 episodes_number = 100000
 finish = 5
-agent = Agent(0.1, 0.9, qtable)
+agent = Agent(Constants.ALFA.value, Constants.GAMMA.value, qtable)
 environment = LineEnvironment(finish)
 
 agent.learn(episodes_number, environment)
