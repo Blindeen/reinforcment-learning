@@ -2,8 +2,9 @@ from classes.environment import Environment
 
 
 class LineEnvironment(Environment):
-    def __init__(self, finish):
+    def __init__(self, length, finish):
         self.track_index = 0
+        self.length = length
         self.finish = finish
 
     def step(self, action):
@@ -11,7 +12,7 @@ class LineEnvironment(Environment):
             if self.track_index != 0:
                 self.track_index -= 1
         if action == 1:
-            if self.track_index != self.finish:
+            if self.track_index != self.length - 1:
                 self.track_index += 1
 
         if self.track_index == self.finish:
