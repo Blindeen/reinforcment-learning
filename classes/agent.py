@@ -1,5 +1,4 @@
 import random
-
 import numpy as np
 
 
@@ -34,7 +33,7 @@ class Agent:
         if max_value == min_value:
             action = random.choice(possible_actions)
         else:
-            action = row.index(max_value)
+            action = np.argmax(row)
 
         return action
 
