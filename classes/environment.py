@@ -17,3 +17,15 @@ class Environment(ABC):
     @abstractmethod
     def get_possible_actions(self, state=None):
         pass
+
+    @abstractmethod
+    def init_gui(self):
+        pass
+
+    @abstractmethod
+    def reset_gui(self):
+        pass
+
+    @abstractmethod
+    def color_rectangle(self, color, cooridinates):
+        pass
